@@ -269,7 +269,16 @@ You must be logged in with your SUNY (Solar/Shibboleth) credentials to access an
 </aside>
 <h1 id='marginalia'>Marginalia</h1><h2 id='get-creators-get-get_creators'>Get Creators [GET: /get_creators]</h2>
 <p>This endpoint</p>
-<pre class="highlight javascript tab-javascript"><code><span class="kd">let</span> <span class="nx">kittens</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="nx">get</span><span class="p">();</span>
+<pre class="highlight javascript tab-javascript"><code><span class="nx">getCreators</span><span class="p">()</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">data</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">)))</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">error</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">error</span><span class="p">));</span>
+
+<span class="kd">function</span> <span class="nx">getCreators</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">fetch</span><span class="p">(</span><span class="s2">"https://apps.tlt.stonybrook.edu/marginaliacss/api/public/get_creators"</span><span class="p">,</span> <span class="p">{</span>
+    <span class="na">method</span><span class="p">:</span> <span class="s2">"GET"</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">());</span>
+<span class="p">}</span>
 </code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://apps.tlt.stonybrook.edu/marginaliacss/api/public/get_creators"</span>
 --cookie <span class="s2">"..."</span>
 </code></pre>
