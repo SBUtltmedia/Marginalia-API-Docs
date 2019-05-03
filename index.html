@@ -226,7 +226,58 @@
             <a href="#about" class="toc-h1 toc-link" data-title="About">About</a>
           </li>
           <li>
-            <a href="#marginalia" class="toc-h1 toc-link" data-title="Marginalia">Marginalia</a>
+            <a href="#permissions" class="toc-h1 toc-link" data-title="Permissions">Permissions</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-work-permissions" class="toc-h2 toc-link" data-title="Get Work Permissions">Get Work Permissions</a>
+                  </li>
+                  <li>
+                    <a href="#add-user-to-work-permissions" class="toc-h2 toc-link" data-title="Add User to Work Permissions">Add User to Work Permissions</a>
+                  </li>
+                  <li>
+                    <a href="#remove-user-from-work-permissions" class="toc-h2 toc-link" data-title="Remove User from Work Permissions">Remove User from Work Permissions</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#work" class="toc-h1 toc-link" data-title="Work">Work</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#create-work" class="toc-h2 toc-link" data-title="Create Work">Create Work</a>
+                  </li>
+                  <li>
+                    <a href="#get-work-data" class="toc-h2 toc-link" data-title="Get Work Data">Get Work Data</a>
+                  </li>
+                  <li>
+                    <a href="#set-work-privacy" class="toc-h2 toc-link" data-title="Set Work Privacy">Set Work Privacy</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#comments" class="toc-h1 toc-link" data-title="Comments">Comments</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-highlighted-comments" class="toc-h2 toc-link" data-title="Get Highlighted Comments">Get Highlighted Comments</a>
+                  </li>
+                  <li>
+                    <a href="#get-comment-chain" class="toc-h2 toc-link" data-title="Get Comment Chain">Get Comment Chain</a>
+                  </li>
+                  <li>
+                    <a href="#create-comment" class="toc-h2 toc-link" data-title="Create Comment">Create Comment</a>
+                  </li>
+                  <li>
+                    <a href="#edit-comment" class="toc-h2 toc-link" data-title="Edit Comment">Edit Comment</a>
+                  </li>
+                  <li>
+                    <a href="#delete-comment" class="toc-h2 toc-link" data-title="Delete Comment">Delete Comment</a>
+                  </li>
+                  <li>
+                    <a href="#set-comment-public-private" class="toc-h2 toc-link" data-title="Set Comment Public/Private">Set Comment Public/Private</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#users" class="toc-h1 toc-link" data-title="Users">Users</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#get-creators" class="toc-h2 toc-link" data-title="Get Creators">Get Creators</a>
@@ -267,7 +318,7 @@
 <aside class="notice">
 You must be logged in with your SUNY (Solar/Shibboleth) credentials to access any endpoints. Meaning you must supply valid cookie credentials with every request.
 </aside>
-<h1 id='marginalia'>Marginalia</h1><h2 id='get-creators'>Get Creators</h2>
+<h1 id='permissions'>Permissions</h1><h2 id='get-work-permissions'>Get Work Permissions</h2><h2 id='add-user-to-work-permissions'>Add User to Work Permissions</h2><h2 id='remove-user-from-work-permissions'>Remove User from Work Permissions</h2><h1 id='work'>Work</h1><h2 id='create-work'>Create Work</h2><h2 id='get-work-data'>Get Work Data</h2><h2 id='set-work-privacy'>Set Work Privacy</h2><h1 id='comments'>Comments</h1><h2 id='get-highlighted-comments'>Get Highlighted Comments</h2><h2 id='get-comment-chain'>Get Comment Chain</h2><h2 id='create-comment'>Create Comment</h2><h2 id='edit-comment'>Edit Comment</h2><h2 id='delete-comment'>Delete Comment</h2><h2 id='set-comment-public-private'>Set Comment Public/Private</h2><h1 id='users'>Users</h1><h2 id='get-creators'>Get Creators</h2>
 <p>This endpoint retrieves the EPPNs of users that have created works on the site.</p>
 <pre class="highlight javascript tab-javascript"><code><span class="kd">let</span> <span class="nx">base_url</span> <span class="o">=</span> <span class="s2">"https://apps.tlt.stonybrook.edu/marginaliacss/api/public"</span><span class="p">;</span>
 <span class="kd">let</span> <span class="nx">endpoint</span> <span class="o">=</span> <span class="s2">"/get_creators"</span>
@@ -313,6 +364,8 @@ You must be logged in with your SUNY (Solar/Shibboleth) credentials to access an
   <span class="p">})</span>
   <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">());</span>
 <span class="p">}</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://apps.tlt.stonybrook.edu/marginaliacss/api/public/get_current_user"</span>
+--cookie <span class="s2">"..."</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
