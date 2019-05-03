@@ -32,10 +32,10 @@ All the endpoints can be reached with simple GET & POST HTTP requests.
 The right side of the browser shows sample JavaScript code which may be used to connect to various endpoints described.
 
 <aside class="notice">
-You must be logged in with your SUNY (Solar/Shibboleth) credentials to access any endpoints.
-
-You must supply valid cookie credentials.
+You must be logged in with your SUNY (Solar/Shibboleth) credentials to access any endpoints. Meaning you must supply valid cookie credentials with every request.
 </aside>
+
+
 
 # Marginalia
 
@@ -49,27 +49,20 @@ let kittens = api.kittens.get();
 
 ```shell
 curl "https://apps.tlt.stonybrook.edu/marginaliacss/api/public/get_creators"
+--cookie "..."
 ```
 
 > The above command returns JSON structured like this:
 
 ```json
-[
-  {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
-  },
-  {
-    "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
-  }
-]
+{
+  "status": "ok",
+  "data": [
+    "creator1@stonybrook.edu",
+    "creator2@stonybrook.edu",
+    "creator3@stonybrook.edu"
+  ]
+}
 ```
 
 This endpoint retrieves all kittens.
