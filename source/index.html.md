@@ -5,7 +5,7 @@ language_tabs: # must be one of https://git.io/vQNgJ
   - javascript
 
 toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
+  - <a href='https://apps.tlt.stonybrook.edu/marginaliacss/'>Marginalia Full Site</a>
   - <a href='https://github.com/lord/slate'>Documentation Powered by Slate</a>
 
 includes:
@@ -16,13 +16,13 @@ search: true
 
 # Introduction
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
+Welcome to the Marginalia API! You can use the Marginalia API independently of the Marginalia website.
 
-We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+The purpose of these docs, are to allow new developers to learn, understand, expand or integrate their own applications with Marginalia.
 
-This example API documentation page was created with [Slate](https://github.com/lord/slate). Feel free to edit it and use it as a base for your own API's documentation.
+The backend API was built with <a href='https://docs.slimframework.com/'>Slim 2 Framework</a> and PHP 5.
 
-# Authentication
+# About
 
 > To authorize, use this code:
 
