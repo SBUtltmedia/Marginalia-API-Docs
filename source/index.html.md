@@ -3,6 +3,7 @@ title: API Reference
 
 language_tabs: # must be one of https://git.io/vQNgJ
   - javascript
+  - shell
 
 toc_footers:
   - <a href='https://apps.tlt.stonybrook.edu/marginaliacss/'>Marginalia Full Site</a>
@@ -32,18 +33,22 @@ The right side of the browser shows sample JavaScript code which may be used to 
 
 <aside class="notice">
 You must be logged in with your SUNY (Solar/Shibboleth) credentials to access any endpoints.
+
+You must supply valid cookie credentials.
 </aside>
 
-# Kittens
+# Marginalia
 
-## Get All Kittens
+## Get Creators [GET: /get_creators]
 
+This endpoint
 
 ```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
 let kittens = api.kittens.get();
+```
+
+```shell
+curl "https://apps.tlt.stonybrook.edu/marginaliacss/api/public/get_creators"
 ```
 
 > The above command returns JSON structured like this:
