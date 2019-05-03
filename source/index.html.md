@@ -24,6 +24,12 @@ The backend API was built with <a href='https://docs.slimframework.com/'>Slim 2 
 
 # About
 
+Marginalia's API (Slim Framework) is a RESTful API service.
+
+All the endpoints can be reached with simple GET & POST HTTP requests.
+
+The right side of the browser shows sample JavaScript code which may be used to connect to various endpoints described.
+
 > To authorize, use this code:
 
 
