@@ -39,17 +39,20 @@ You must be logged in with your SUNY (Solar/Shibboleth) credentials to access an
 
 # Marginalia
 
-## Get Creators [GET: /get_creators]
+## Get Creators
 
-This endpoint
+This endpoint retrieves the EPPNs of users that have created works on the site.
 
 ```javascript
-getCreators()
+let base_url = "https://apps.tlt.stonybrook.edu/marginaliacss/api/public";
+let endpoint = "/get_creators"
+
+getCreators(base_url, endpoint)
   .then(data => console.log(JSON.stringify(data)))
   .catch(error => console.error(error));
 
-function getCreators() {
-  return fetch("https://apps.tlt.stonybrook.edu/marginaliacss/api/public/get_creators", {
+function getCreators(base_url, endpoint) {
+  return fetch(base_url + endpoint, {
     method: "GET"
   })
   .then(response => response.json());
@@ -74,58 +77,46 @@ curl "https://apps.tlt.stonybrook.edu/marginaliacss/api/public/get_creators"
 }
 ```
 
-This endpoint retrieves all kittens.
-
 ### HTTP Request
 
-`GET http://example.com/api/kittens`
+`GET https://apps.tlt.stonybrook.edu/marginaliacss/api/public/get_creators`
 
-### Query Parameters
+## Get Current User
 
-Parameter | Default | Description
---------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
-
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-
-## Get a Specific Kitten
-
+Retrieves the first and last name, as-well as the EPPN of the currently logged in user.
 
 ```javascript
-const kittn = require('kittn');
+let base_url = "https://apps.tlt.stonybrook.edu/marginaliacss/api/public";
+let endpoint = "/get_current_user"
 
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.get(2);
+getCurrentUser(base_url, endpoint)
+  .then(data => console.log(JSON.stringify(data)))
+  .catch(error => console.error(error));
+
+function getCurrentUser(base_url, endpoint) {
+  return fetch(base_url + endpoint, {
+    method: "GET"
+  })
+  .then(response => response.json());
+}
 ```
 
 > The above command returns JSON structured like this:
 
 ```json
 {
-  "id": 2,
-  "name": "Max",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
+  "status": "ok",
+  "data": {
+    "firstname": "John",
+    "lastname": "Doe",
+    "eppn": "jdoe@stonybrook.edu"
+  }
 }
 ```
 
-This endpoint retrieves a specific kitten.
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-
 ### HTTP Request
 
-`GET http://example.com/kittens/<ID>`
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to retrieve
+`GET https://apps.tlt.stonybrook.edu/marginaliacss/api/public/get_current_user`
 
 ## Delete a Specific Kitten
 
