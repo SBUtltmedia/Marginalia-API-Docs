@@ -44,7 +44,16 @@ You must be logged in with your SUNY (Solar/Shibboleth) credentials to access an
 This endpoint
 
 ```javascript
-let kittens = api.kittens.get();
+getCreators()
+  .then(data => console.log(JSON.stringify(data)))
+  .catch(error => console.error(error));
+
+function getCreators() {
+  return fetch("https://apps.tlt.stonybrook.edu/marginaliacss/api/public/get_creators", {
+    method: "GET"
+  })
+  .then(response => response.json());
+}
 ```
 
 ```shell
