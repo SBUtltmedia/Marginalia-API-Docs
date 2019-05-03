@@ -35,9 +35,37 @@ The right side of the browser shows sample JavaScript code which may be used to 
 You must be logged in with your SUNY (Solar/Shibboleth) credentials to access any endpoints. Meaning you must supply valid cookie credentials with every request.
 </aside>
 
+# Permissions
 
+## Get Work Permissions
 
-# Marginalia
+## Add User to Work Permissions
+
+## Remove User from Work Permissions
+
+# Work
+
+## Create Work
+
+## Get Work Data
+
+## Set Work Privacy
+
+# Comments
+
+## Get Highlighted Comments
+
+## Get Comment Chain
+
+## Create Comment
+
+## Edit Comment
+
+## Delete Comment
+
+## Set Comment Public/Private
+
+# Users
 
 ## Get Creators
 
@@ -99,6 +127,11 @@ function getCurrentUser(base_url, endpoint) {
   })
   .then(response => response.json());
 }
+```
+
+```shell
+curl "https://apps.tlt.stonybrook.edu/marginaliacss/api/public/get_current_user"
+--cookie "..."
 ```
 
 > The above command returns JSON structured like this:
